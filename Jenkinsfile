@@ -13,8 +13,9 @@ pipeline {
       steps {
         sh '''
 cd /root/apache-tomcat-9.0.60/webapps
-wget http://192.168.1.21:10010/repository/maven-snapshots/com/learnwell/app/webspp/1.0-SNAPSHOT/webspp-1.0-20220416.065721-11.war
-              
+export artifact_version=`wget -O - -o /dev/null http://192.168.1.21:10010/repository/maven-snapshots/com/learnwell/app/webspp/1.0-SNAPSHOT/maven-metadata.xml | grep value | uniq | grep -Po \'<.*?>\\K.*?(?=<.*?>)\'`
+wget http://192.168.1.21:10010/repository/maven-snapshots/com/learnwell/app/webspp/1.0-SNAPSHOT/webspp-$artifact_version.war
+          
 sleep 15
 ps -ef | grep tomcat'''
       }
