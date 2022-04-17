@@ -23,13 +23,13 @@
       <uniqueVersion>true</uniqueVersion>
       <id>releaseID</id>
       <name>Propellors</name>
-      <url>http://192.168.1.21:10010/repository/maven-releases/</url>
+      <url>http://192.168.48.249:10010/repository/maven-releases/</url>
      </repository>
     <snapshotRepository>
       <uniqueVersion>true</uniqueVersion>
       <id>snapID</id>
       <name>Propellors Snapshots</name>
-      <url>http://192.168.1.21:10010/repository/maven-snapshots/</url>
+      <url>http://192.168.48.249:10010/repository/maven-snapshots/</url>
      </snapshotRepository>
   </distributionManagement>
 </project>
